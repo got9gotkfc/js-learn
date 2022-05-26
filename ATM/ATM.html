@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let result ="";
+        let save = parseInt(prompt('目前存款量?', 0));
+        console.log('存款=>' + save);
+        let action = parseInt(prompt('1.領錢 2.轉帳 3.存錢', 0));
+        console.log('動作=>' + action);
+        switch (action) {
+            case 1:
+                console.log('領錢中');
+                result='動作=>' + action+"領錢"+"\n";
+                let getmoney = parseInt(prompt('領多少錢:', 0));
+                console.log('領錢金額=>' + getmoney);
+                result=result+'領錢金額=>' + getmoney+"\n"
+                if (save >= getmoney) {
+                    console.log("成功領錢!")
+                    save = save - getmoney;
+                } else {
+                    console.log("餘額不足，本次無法領取!")
+                }
+            
+                break;
+            case 2:
+                console.log('轉帳中');
+                result='動作=>' + action+"轉帳"+"\n";
+                let transferID = prompt('轉入帳號:', 0);
+                console.log('轉帳帳號=>' + transferID);
+                result=result+'轉帳帳號=>' + transferID+"\n"
+                let transfermoney = parseInt(prompt('轉多少錢:', 0));
+                console.log('轉帳金額=>' + transfermoney);
+                result=result+'轉帳金額=>' + transfermoney+"\n"
+                if (save >= transfermoney) {
+                    console.log("成功轉帳!")
+                    save = save - transfermoney;
+                } else {
+                    console.log("存款金額不足，無法轉帳!") 
+                }
+                
+                break;
+            case 3:
+            console.log('存錢中');
+            result='動作=>' + action+"存錢"+"\n";
+                let savemoney = parseInt(prompt('存多少錢:', 0));
+                console.log('存錢金額=>' + savemoney);
+                result=result+'存錢金額=>' + savemoney+"\n"
+                if (savemoney > 0) {
+                    console.log("成功存錢!")
+                    save = save + savemoney;
+                } else {
+                    console.log("輸入錯誤無法存錢!")
+                }
+                break;
+            default:
+                break;
+        }
+        result= result +"最終存款=>" + save +"\n"
+        alert(result);
+    </script>
+</body>
+
+</html>
