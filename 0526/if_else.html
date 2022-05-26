@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" id="ID"> -->
+    <script>
+        // 判斷身分證有沒有打折
+        // 有123 打A級折扣
+        // 有456 打B級折扣
+        // 有789 打C級折扣
+
+
+        let ID = 'A124450089'; //輸入的ID
+        let ismaber = true; //會員判斷
+        let IDstr = "";
+        let IDresult = []; //ID的暫存結果
+        let result = [];
+        let conditionNum = []; //折扣優惠的條件
+        console.log('IDstr', IDstr);
+
+        conditionNum = ["1", "2", "3"];
+
+        for (let index = 1; index < ID.length; index++) {
+            for (let num = 0; num < conditionNum.length; num++) {
+                const element = conditionNum[num];
+                if (IDstr = ID.includes(element)) {
+                    IDresult.push("A");
+                }
+            }
+            if (IDresult.length == 3) {
+                result.push("A");
+            }
+        }
+        IDresult = [];
+        conditionNum = ["4", "5", "6"];
+
+        for (let index = 1; index < ID.length; index++) {
+            for (let num = 0; num < conditionNum.length; num++) {
+                const element = conditionNum[num];
+                if (IDstr = ID.includes(element)) {
+                    IDresult.push("B");
+                }
+            }
+            if (IDresult.length == 3) {
+                result.push("B");
+            }
+
+        }
+        IDresult = [];
+        conditionNum = ["7", "8", "9"];
+
+        for (let index = 1; index < ID.length; index++) {
+            for (let num = 0; num < conditionNum.length; num++) {
+                const element = conditionNum[num];
+                if (IDstr = ID.includes(element)) {
+                    IDresult.push("C");
+                }
+            }
+            if (IDresult.length == 3) {
+                result.push("C");
+            }
+        }
+        IDresult = [];
+
+        switch (result) {
+            case "A":
+                console.log("恭喜你得到 一折");
+                break;
+            case "B":
+                console.log("恭喜你得到 五折");
+                break;
+            case "C":
+                console.log("恭喜你得到 七折");
+                break;
+
+            default:
+                console.log("恭喜你得到 九五折");
+                break;
+        }
+
+       
+    </script>
+</body>
+
+</html>
