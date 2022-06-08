@@ -14,21 +14,18 @@
         let plate = 1;
         let price = 30;
         let money = parseInt(prompt(`今天帶多少錢?`, 0));
-        while (money > 30) {
+        while (money > 30) { 
+            plate++;
             money = money - price;
-            if (min >= 0 && min <= 30) {
-                document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
-                plate++;
+            document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
+            if (min >= 0 && min <= 30){  
                 min = min + 5;
             } else if (min > 31 && min <= 60) {
-                document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
-                plate++;
                 min = min + 6;
             } else if (min > 61 && min <= 90) {
-                document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
-                plate++;
                 min = min + 7;
             } else {
+                document.write("你挑戰超過90分鐘，已經成為傳說");
                 break;
             }
 
