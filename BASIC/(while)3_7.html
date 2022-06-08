@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let array = [];
+        // let input1 = parseInt(prompt(`請輸入0-1000內的整數第一個數`, 0));;
+        // let input2 = parseInt(prompt(`請輸入0-1000內的整數第二個數`, 0));;
+        let input1=Number(Math.floor(Math.random() * (1000 - 0 + 1)) + 0);
+        let input2=Number(Math.floor(Math.random() * (1000 - 0 + 1)) + 0);
+        array.push(input1);
+        array.push(input2);
+        array.sort(function (a, b) {
+            return a - b;
+        })
+        let a = array[0];
+        let b = array[1];
+        document.write(`${a}到${b}之間可以被3跟11整除的整數是:<br>`);
+        while (a <= b) {
+            if (a % 3 == 0 && a % 11 == 0) {
+                document.write(`${a}&nbsp`);
+            }
+            a++;
+        }
+    </script>
+
+</body>
+
+</html>
