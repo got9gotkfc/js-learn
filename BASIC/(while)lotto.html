@@ -30,19 +30,19 @@
             }
         }
         // 排序你簽的號碼(小到大)
-        mynumber.sort(function (a,b) {
-            return a-b;
+        mynumber.sort(function (a, b) {
+            return a - b;
         })
         document.write("我的號碼為:");
         for (let index = 0; index < mynumber.length; index++) {
-            document.write( mynumber[index]+"&nbsp");
+            document.write(mynumber[index] + "&nbsp");
         }
 
-        
+
         var i = 0;
-       
+
         while (lottery.length < 6) {
-            let number = Math.floor(Math.random() * (49 - 1+1) + 1);
+            let number = Math.floor(Math.random() * (49 - 1 + 1) + 1);
             // 防重複
             if (lottery.indexOf(number) < 0) {
                 lottery.push(number);
@@ -50,48 +50,47 @@
             }
         }
         // 排序開獎號碼(小到大)
-        lottery.sort(function (a,b) {
-            return a-b;            
-        }) 
+        lottery.sort(function (a, b) {
+            return a - b;
+        })
         document.write("<br>本期中獎號碼為:");
         for (let index = 0; index < lottery.length; index++) {
-            document.write( lottery[index]+"&nbsp");
+            document.write(lottery[index] + "&nbsp");
         }
 
         // let result=function(mynumber,lottery){
-            var a=mynumber.length;
-            let time=0;
-            while (a--) {
-                if (mynumber[a]==lottery[a]) {
-                    time++; 
-                }
-               
+        var a = mynumber.length;
+        let time = 0;
+        while (a--) {
+            if (mynumber[a] == lottery[a]) {
+                time++;
             }
-            switch (time) {
-                case 0:
-                    document.write("<hr>結果:都沒中!再接再厲")
-                    break;
-                case 1:
-                    document.write("<hr>結果:可惜只中1個號碼")
-                    break;
-                case 2:
-                    document.write("<hr>結果:差一點點中了2個號碼")
-                    break;
-                case 3:
-                    document.write("<hr>結果:厲害喔!中了3個號碼->四獎")
-                    break;
-                case 4:
-                    document.write("<hr>結果:不錯喔!中了4個號碼->三獎")
-                    break;
-                case 5:
-                    document.write("<hr>結果:太棒了!中了5個號碼->二獎")
-                    break;
-                case 6:
-                    document.write("<hr>結果:恭喜6個號碼全中->頭獎!!!!")
-                    break;
-            }
+
+        }
+        switch (time) {
+            case 0:
+                document.write("<hr>結果:都沒中!再接再厲")
+                break;
+            case 1:
+                document.write("<hr>結果:可惜只中1個號碼")
+                break;
+            case 2:
+                document.write("<hr>結果:差一點點中了2個號碼")
+                break;
+            case 3:
+                document.write("<hr>結果:厲害喔!中了3個號碼->四獎")
+                break;
+            case 4:
+                document.write("<hr>結果:不錯喔!中了4個號碼->三獎")
+                break;
+            case 5:
+                document.write("<hr>結果:太棒了!中了5個號碼->二獎")
+                break;
+            case 6:
+                document.write("<hr>結果:恭喜6個號碼全中->頭獎!!!!")
+                break;
+        }
         // }
-        
     </script>
 </body>
 
