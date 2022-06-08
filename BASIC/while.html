@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let i=1;
+      let input =parseInt(prompt('學生人數?', 0));
+      let allsum=0;
+      let allavg=0;
+      while (i<=input) {
+       let studentCHI= parseInt(prompt(`學生${i}國文成績?`, 0));
+       let studentMATH= parseInt(prompt(`學生${i}數學成績?`, 0));
+       let studentENG= parseInt(prompt(`學生${i}英文成績?`, 0));
+       document.write(`學生${i}國文成績=${studentCHI}<br>`)
+       document.write(`學生${i}數學成績=${studentMATH}<br>`)
+       document.write(`學生${i}英文成績=${studentENG}<br><br>`)
+       let sum=studentCHI+studentMATH+studentENG;
+          document.write(`學生${i}<br>總分=${sum}<br>`);
+          let avg=sum/3;
+          avg=avg.toFixed(2);
+          document.write(`平均=${avg}<hr>`);
+          allsum=allsum+sum;
+         i++ 
+         if (i>3) {
+             document.write("老師的手會斷掉<br>");
+             break;
+         }
+      } 
+      document.write(`全班總分=${allsum}<br>`);
+      allavg=allsum/input
+      allavg=allavg.toFixed(2);
+      document.write(`全班平均=${allavg}`);
+
+    </script>
+</body>
+</html>
