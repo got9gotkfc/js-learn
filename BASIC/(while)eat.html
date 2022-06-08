@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        let time=5;
-        let plate=1;
-        let price=30;
-        let money=parseInt(prompt(`今天帶多少錢?`, 0));
-       while (money>30) { 
-           money=money-price;
-           document.write(`吃了${plate}盤<br>剩下${money}元<br>過了${time}分鐘<hr>`)
-           plate++
-           time=time+5;
+        let min = 0;
+        let plate = 1;
+        let price = 30;
+        let money = parseInt(prompt(`今天帶多少錢?`, 0));
+        while (money > 30) {
+            money = money - price;
+            if (min >= 0 && min <= 30) {
+                document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
+                plate++;
+                min = min + 5;
+            } else if (min > 31 && min <= 60) {
+                document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
+                plate++;
+                min = min + 6;
+            } else if (min > 61 && min <= 90) {
+                document.write(`${min}:00&nbsp吃了${plate}盤&nbsp剩下${money}元<hr>`);
+                plate++;
+                min = min + 7;
+            } else {
+                break;
+            }
+
         }
-
-
-
-
-
     </script>
 </body>
+
 </html>
