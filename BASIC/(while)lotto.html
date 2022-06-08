@@ -18,16 +18,19 @@
         let mynumber = [];
         // 簽的樂透號碼+防呆
         while (mynumber.length < 6) {
-            let num = parseInt(prompt(`請在1-49的範圍內選第${i+1}個號碼`, 0));
+            // let num = parseInt(prompt(`請在1-49的範圍內選第${i+1}個號碼`, 0));
+            let num=Number(Math.floor(Math.random() * (49 - 1 + 1)) + 1);
+
             // 防呆
             if (num <= 0 || num > 49) {
                 alert("不在範圍內，請重選");
             } else if (mynumber.indexOf(num) < 0) {
                 mynumber.push(num);
                 i++;
-            } else {
-                alert("你選到重複的號碼，請重選");
             }
+            // } else {
+            //     alert("你選到重複的號碼，請重選");
+            // }
         }
         // 排序你簽的號碼(小到大)
         mynumber.sort(function (a, b) {
@@ -59,12 +62,18 @@
         }
 
         // let result=function(mynumber,lottery){
-        var a = mynumber.length;
+        var a = 0;
+        
         let time = 0;
-        while (a--) {
-            if (mynumber[a] == lottery[a]) {
+        while (a<mynumber.length) {
+            var b=0;
+            while (b<lottery.length) {
+                if (mynumber[a] == lottery[b]) {
                 time++;
             }
+            b++
+            }
+            a++
 
         }
         switch (time) {
